@@ -10,6 +10,8 @@ const runner            = require('./test-runner');
 
 const app = express();
 
+require('./db_connection.js')
+
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 
