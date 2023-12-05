@@ -11,10 +11,6 @@ module.exports = function (app) {
 
       //check the input
       const { puzzle } = req.body
-
-      const ifValid = solver.validate(puzzle)
-
-      console.log('puzzle', ifValid)
         
     });
     
