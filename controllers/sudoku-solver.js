@@ -1,4 +1,6 @@
 class SudokuSolver {
+
+
   validate(puzzleString) {
     const validatePuzzle = /^[1-9.]+$/.test(puzzleString);
     return validatePuzzle;
