@@ -25,8 +25,23 @@ module.exports = function (app) {
     .post((req, res) => {
 
       const { puzzle } = req.body
-
       const sudokuSolution = solver.solve(puzzle)
+
+      if(!puzzle) {
+       return res.json({ error: 'Required field missing' })
+      }
+
+      if(!solver.validate(puzzle)) {
+        return res.json({ error: 'Invalid characters in puzzle' })
+      }
+
+      if(puzzle.length !== 81) {
+        return res.json({ error: 'Expected puzzle to be 81 characters long' })
+      }
+
+      if(!sudokuSolution) {
+        return res.json({ error: 'Puzzle cannot be solved' })
+      }
 
       res.json({ solution: sudokuSolution })
 

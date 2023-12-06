@@ -4,12 +4,10 @@ const { Schema } = mongoose
 
 const SudokuSchema = new Schema({
     puzzle: { 
-        type: String, 
-        maxLength: [81, 'only 81 characters are allowed']
+        type: String
     },
     solution: {
-        type: String,
-        maxLength: [81, 'only 81 characters are allowed']
+        type: String
     }
 })
 
