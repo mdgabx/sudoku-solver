@@ -64,7 +64,7 @@ class SudokuSolver {
                 }
             }
         }
-        return null; // No empty cell found, puzzle solved
+        return null;
     };
 
     const isValid = (board, row, col, num) => {
@@ -85,14 +85,14 @@ class SudokuSolver {
             }
         }
 
-        return true; // Valid placement
+        return true; 
     };
 
     const solve = () => {
         const emptyCell = findEmptyCell(board);
 
         if (!emptyCell) {
-            return true; // Puzzle solved
+            return true; 
         }
 
         const [row, col] = emptyCell;
@@ -105,17 +105,17 @@ class SudokuSolver {
                     return true;
                 }
 
-                board[row][col] = 0; // Reset cell if no solution found
+                board[row][col] = 0; 
             }
         }
 
-        return false; // Trigger backtracking
+        return false; 
     };
 
     if (solve()) {
-        return board; // Solved Sudoku puzzle
+        return board; 
     } else {
-        return false; // No solution exists
+        return false;
     }
 }
 
